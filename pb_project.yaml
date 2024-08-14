@@ -3,7 +3,7 @@ name: sample_attribution
 # Project's yaml schema version
 schema_version: 69
 # WH Connection to use.
-connection: David's Demo
+connection: profiles_demo
 # Model folders to use.
 model_folders:
   - models
