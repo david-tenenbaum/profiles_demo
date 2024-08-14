@@ -1,0 +1,195 @@
+# This is a sample file, for detailed reference see: https://www.rudderstack.com/docs/profiles/get-started/profile-builder/
+inputs:
+  - name: marketingIdentifies
+    contract:
+      is_optional: false
+      is_event_stream: true
+      with_entity_ids:
+        - user
+      with_columns: []
+    app_defaults:
+      table: DAVID_T_DEMO.MARKETING_WEBSITE.IDENTIFIES
+      occurred_at_col: timestamp
+      ids:
+        - select: 'user_id'
+          type: user_id
+          entity: user
+        - select: 'anonymous_id'
+          type: anonymous_id
+          entity: user
+        - select: 'lower(email)'
+          type: email
+          entity: user
+  - name: marketingTracks
+    contract:
+      is_optional: false
+      is_event_stream: true
+      with_entity_ids:
+        - user
+      with_columns: []
+    app_defaults:
+      table: DAVID_T_DEMO.MARKETING_WEBSITE.TRACKS
+      occurred_at_col: timestamp
+      ids:
+        - select: 'user_id'
+          type: user_id
+          entity: user
+        - select: 'anonymous_id'
+          type: anonymous_id
+          entity: user
+  - name: iotTracks
+    contract:
+      is_optional: false
+      is_event_stream: true
+      with_entity_ids:
+        - user
+      with_columns: []
+    app_defaults:
+      table: DAVID_T_DEMO.IOT_CONNECTED_DEVICE_EVENTS.TRACKS
+      occurred_at_col: timestamp
+      ids:
+        - select: 'user_id'
+          type: user_id
+          entity: user
+  - name: iosTracks
+    contract:
+      is_optional: false
+      is_event_stream: true
+      with_entity_ids:
+        - user
+      with_columns: []
+    app_defaults:
+      table: DAVID_T_DEMO.IOS_APP.TRACKS
+      occurred_at_col: timestamp
+      ids:
+        - select: 'user_id'
+          type: user_id
+          entity: user
+        - select: 'anonymous_id'
+          type: anonymous_id
+          entity: user
+  - name: iosAccountCreated
+    contract:
+      is_optional: false
+      is_event_stream: true
+      with_entity_ids:
+        - user
+      with_columns: []
+    app_defaults:
+      table: DAVID_T_DEMO.IOS_APP.ACCOUNT_CREATED
+      occurred_at_col: timestamp
+      ids:
+        - select: 'user_id'
+          type: user_id
+          entity: user
+        - select: 'anonymous_id'
+          type: anonymous_id
+          entity: user
+        - select: 'device_id'
+          type: device_id
+          entity: user
+  - name: androidTracks
+    contract:
+      is_optional: false
+      is_event_stream: true
+      with_entity_ids:
+        - user
+      with_columns: []
+    app_defaults:
+      table: DAVID_T_DEMO.ANDROID_APP.TRACKS
+      occurred_at_col: timestamp
+      ids:
+        - select: 'user_id'
+          type: user_id
+          entity: user
+        - select: 'anonymous_id'
+          type: anonymous_id
+          entity: user
+  - name: androidAccountCreated
+    contract:
+      is_optional: false
+      is_event_stream: true
+      with_entity_ids:
+        - user
+      with_columns: []
+    app_defaults:
+      table: DAVID_T_DEMO.ANDROID_APP.ACCOUNT_CREATED
+      occurred_at_col: timestamp
+      ids:
+        - select: 'user_id'
+          type: user_id
+          entity: user
+        - select: 'anonymous_id'
+          type: anonymous_id
+          entity: user
+        - select: 'device_id'
+          type: device_id
+          entity: user
+  - name: backendTracks
+    contract:
+      is_optional: false
+      is_event_stream: true
+      with_entity_ids:
+        - user
+      with_columns: []
+    app_defaults:
+      table: DAVID_T_DEMO.BACKEND_SUBSCRIPTION_SERVICE.TRACKS
+      occurred_at_col: timestamp
+      ids:
+        - select: 'anonymous_id'
+          type: anonymous_id
+          entity: user
+  - name: backendSubscriptionStarts
+    contract:
+      is_optional: false
+      is_event_stream: true
+      with_entity_ids:
+        - user
+      with_columns: []
+    app_defaults:
+      table: DAVID_T_DEMO.BACKEND_SUBSCRIPTION_SERVICE.SUBSCRIPTION_START
+      occurred_at_col: timestamp
+      ids:
+        - select: 'anonymous_id'
+          type: anonymous_id
+          entity: user
+        - select: 'device_id'
+          type: device_id
+          entity: user
+        - select: 'shopify_customer_id'
+          type: shopify_customer_id
+          entity: user
+  - name: shopifyTracks
+    contract:
+      is_optional: false
+      is_event_stream: true
+      with_entity_ids:
+        - user
+      with_columns: []
+    app_defaults:
+      table: DAVID_T_DEMO.SHOPIFY_STORE.TRACKS
+      occurred_at_col: timestamp
+      ids:
+        - select: 'anonymous_id'
+          type: anonymous_id
+          entity: user
+  - name: shopifyOrderCompleted
+    contract:
+      is_optional: false
+      is_event_stream: true
+      with_entity_ids:
+        - user
+      with_columns: []
+    app_defaults:
+      table: DAVID_T_DEMO.SHOPIFY_STORE.ORDER_COMPLETED
+      occurred_at_col: timestamp
+      ids:
+        - select: 'anonymous_id'
+          type: anonymous_id
+          entity: user
+        - select: 'device_id'
+          type: device_id
+          entity: user
+        - select: 'shopify_customer_id'
+          type: shopify_customer_id
+          entity: user

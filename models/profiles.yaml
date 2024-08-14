@@ -1,0 +1,43 @@
+# This is a sample file, for detailed reference see: https://www.rudderstack.com/docs/profiles/get-started/profile-builder
+models:
+  - name: user_id_stitcher
+    model_type: id_stitcher
+    model_spec:
+      validity_time: 24h # 1 day
+      entity_key: user
+      edge_sources:
+        - from: inputs/marketingIdentifies
+        - from: inputs/marketingTracks
+        - from: inputs/iotTracks
+        - from: inputs/iosTracks
+        - from: inputs/iosAccountCreated
+        - from: inputs/androidTracks
+        - from: inputs/androidAccountCreated
+        - from: inputs/backendTracks
+        - from: inputs/backendSubscriptionStarts
+        - from: inputs/shopifyTracks
+        - from: inputs/shopifyOrderCompleted
+
+var_groups:
+  - name: default_vars
+    entity_key: user
+    vars:
+      # - entity_var:
+      #     name: first_seen
+      #     select: min(cast(timestamp as date))
+      #     from: inputs/rsTracks
+      #     is_feature: false
+      # - entity_var:
+      #     name: last_seen
+      #     select: max(cast(timestamp as date))
+      #     from: inputs/rsTracks
+      #     is_feature: false
+      # - entity_var:
+      #     name: user_lifespan
+      #     select: '{{user.Var("last_seen")}} - {{user.Var("first_seen")}}'
+      #     description: Life Time Value of a customer
+      # - entity_var:
+      #     name: days_active
+      #     select: count(distinct cast(timestamp as date))
+      #     from: inputs/rsTracks
+      #     description: No. of days a customer was active
